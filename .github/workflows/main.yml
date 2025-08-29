@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'dockerfile' # Trigger on changes to dockerfile
   workflow_dispatch:  # allows manual triggering
 
 jobs:
