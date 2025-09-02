@@ -16,11 +16,7 @@ To run as a VM:
 ```bash
 mkdir output
 sudo podman pull registry.redhat.io/rhel10/bootc-image-builder
-sudo podman run --rm -it -v ./output:/output -v /var/lib/containers/storage:/var/lib/containers/storage 
-
-
-
- -itregistry.redhat.io/rhel9/bootc-image-builder:9.4:latest --type qcow2 quay.io/tkagn/bootcperftools:latest
+sudo podman run --rm -it --privileged -v ./output:/output -v /var/lib/containers/storage:/var/lib/containers/storage registry.redhat.io/rhel10/bootc-image-builder:latest --type qcow2 quay.io/tkagn/bootcperftools:latest
 ```
 
 
