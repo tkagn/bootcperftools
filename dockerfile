@@ -19,7 +19,7 @@ LABEL description="Fedora image with performance tools for network and disk I/O.
 # - iproute-tc: Provides 'ss' for viewing socket statistics.
 RUN dnf install -y jq yq iperf3 netperf sysstat fio tcpdump iproute-tc cloud-init pcp pcp-system-tools pcp-zeroconf \
 && ln -s ../cloud-init.target /usr/lib/systemd/system/default.target.wants \
-&& systemctl enable --now pmcd \
+&& systemctl enable pmcd \
 && dnf clean all \
 && rm -rf /var/cache/yum \
 && history -c
